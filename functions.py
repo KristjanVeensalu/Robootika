@@ -1,9 +1,11 @@
 import os
-import tkinter as tk
-from tkinter import filedialog
 import subprocess
 import sys
-
+import enchant
+import tkinter as tk
+from tkinter import filedialog
+from enchant.checker import SpellChecker
+from enchant.tokenize import EmailFilter, URLFilter
 
 
 
@@ -39,6 +41,6 @@ def parseFolder(directory):
 
 def printLine():
     print("\n")
-    for x in range(0,40):
+    for x in range(0,50):
         print("-", end = " ")
     print("\n")

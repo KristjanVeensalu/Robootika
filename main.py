@@ -1,10 +1,7 @@
 import functions as func
 func.install("pyenchant")
-import enchant
-from enchant.checker import SpellChecker
-from enchant.tokenize import EmailFilter, URLFilter
-chkr = SpellChecker("en_US",filters=[EmailFilter,URLFilter])
-d=enchant.Dict("en_US")
+chkr = func.SpellChecker("en_US",filters=[func.EmailFilter,func.URLFilter])
+d=func.enchant.Dict("en_US")
 
 selectedFolder = func.chooseFolder()
 selectedFiles = func.parseFolder(selectedFolder)
