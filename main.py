@@ -7,6 +7,10 @@ func.install("pyenchant")
 chkr = func.SpellChecker("en_US",filters=[func.EmailFilter,func.URLFilter])
 d=func.enchant.Dict("en_US")
 
+#Ready a output file
+outputFile = "results.txt"
+func.clearFile(outputFile)
+
 #Let user choose folder or file
 userChoice = "None"
 while userChoice != "F" and userChoice !="f" and userChoice!="d" and userChoice!="D":
@@ -24,10 +28,10 @@ if userChoice == "d" or userChoice == "D":
         print("File found: "+x)
     filesFoundSum = len(selectedFiles)
     print("Files found: " + str(filesFoundSum))
-if userChoice == "f" or "F":
+if userChoice == "f" or userChoice == "F":
     selectedFiles.append(selectedSingleFile)
 
-#Run automatic spellcheck with suggestions
+#Run automatic spellcheck with suggestions, output into file
 try:
     for enchantFiles in selectedFiles:
         func.printLine()
@@ -35,10 +39,10 @@ try:
         textPhase = f.read()
         chkr.set_text(textPhase)
         for err in chkr:
-            print("Word: ('" + err.word + "') In: " + enchantFiles)
             failedWord = d.suggest(err.word)
-            print("Here are a few suggestions: ", end =" ")
-            print(failedWord)
+            func.writeFile("Word: ('" + err.word + "') In: " + enchantFiles,outputFile)
+            func.writeFile("Here are a few suggestions: ",outputFile)
+            func.writeFile(str(failedWord).strip('[]')+ "\n",outputFile)
 
 #If automatic fails, switch to manual
 except:
@@ -133,4 +137,4 @@ except:
         #Return output
         for x in faultyWords:
             wordPosition = splitList.index(x)
-            print("Word: (" + x + ") In> " + fileItself) 
+            func.writeFile("Word: (" + x + ") In> " + fileItself + "\n", outputFile)

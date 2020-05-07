@@ -60,3 +60,15 @@ def printLine():
     for x in range(0,50):
         print("-", end = " ")
     print("\n")
+
+#Write results into file
+def writeFile(input, FileLocation):
+    f = open(FileLocation, "a", encoding='utf-8')
+    f.write(input)
+    f.close()
+
+#Clear file before use
+def clearFile(FileLocation):
+    f = open(FileLocation, "w")
+    f.write("")
+    f.close()
