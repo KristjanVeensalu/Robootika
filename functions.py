@@ -7,17 +7,33 @@ from tkinter import filedialog
 from enchant.checker import SpellChecker
 from enchant.tokenize import EmailFilter, URLFilter
 
-
-
-def chooseFolder():
+def chooseFile():
     root = tk.Tk()
     root.withdraw()
-
-    file_path = filedialog.askdirectory()
+    file_path = ""
+    while file_path == '':
+        print("No file chosen, press ENTER to choose.")
+        input()
+        file_path = filedialog.askopenfilename()
+    print("File chosen: " + file_path)
     directory = file_path
     return directory
 
 
+#Runs tkinter filedialog to open folder select for user, returns path to folder
+def chooseFolder():
+    root = tk.Tk()
+    root.withdraw()
+    file_path = ''
+    while file_path == '':
+        print("No folder chosen, press ENTER to choose.")
+        input()
+        file_path = filedialog.askdirectory()
+    print("Folder chosen: " + file_path)
+    directory = file_path
+    return directory
+
+#Check user installed packages and install any that are missing
 def install(package):
     reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
     installed_packages = [r.decode().split('==')[0] for r in reqs.split()]
@@ -26,9 +42,8 @@ def install(package):
     else:
         import pip
         os.system("pip install --user "+ package)
-        #subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-
+#List all of the useable files in the selected folder, return a list of paths
 def parseFolder(directory):
     fileList=[]
     for filename in os.listdir(directory):
@@ -39,6 +54,7 @@ def parseFolder(directory):
             continue
     return fileList
 
+#Tool to print lines for visual aid
 def printLine():
     print("\n")
     for x in range(0,50):

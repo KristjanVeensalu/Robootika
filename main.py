@@ -1,16 +1,33 @@
 import functions as func
+
+#Force install pyenchant
 func.install("pyenchant")
+
+#Set up enchant spellchecker and dictionary
 chkr = func.SpellChecker("en_US",filters=[func.EmailFilter,func.URLFilter])
 d=func.enchant.Dict("en_US")
 
-selectedFolder = func.chooseFolder()
-selectedFiles = func.parseFolder(selectedFolder)
+#Let user choose folder or file
+userChoice = "None"
+while userChoice != "F" and userChoice !="f" and userChoice!="d" and userChoice!="D":
+    userChoice = input("F = Specific file spellcheck, D = Directory wide spellcheck: ")
+    if userChoice == "D" or userChoice == "d":
+        selectedFolder = func.chooseFolder()
+        selectedFiles = func.parseFolder(selectedFolder)
+    if userChoice == "F" or userChoice == "f":
+        selectedSingleFile = func.chooseFile()
+        selectedFiles = []
 
-for x in selectedFiles:
-    print("File found: "+x)
-filesFoundSum = len(selectedFiles)
-print("Files found: " + str(filesFoundSum))
+#Parse files in chosen folder
+if userChoice == "d" or userChoice == "D":
+    for x in selectedFiles:
+        print("File found: "+x)
+    filesFoundSum = len(selectedFiles)
+    print("Files found: " + str(filesFoundSum))
+if userChoice == "f" or "F":
+    selectedFiles.append(selectedSingleFile)
 
+#Run automatic spellcheck with suggestions
 try:
     for enchantFiles in selectedFiles:
         func.printLine()
@@ -23,8 +40,11 @@ try:
             print("Here are a few suggestions: ", end =" ")
             print(failedWord)
 
+#If automatic fails, switch to manual
 except:
     print("Automatic failed, switching to manual...")
+    
+    #Split sentences in file into a list
     for fileItself in selectedFiles:
         print(fileItself)
         f=open(fileItself, encoding='utf-8')
@@ -34,6 +54,7 @@ except:
         phraseIndex = 0
         listIndexProvider = []
 
+        #Start filtering the list of words
         for x in splitList:
                 if "\n" in x:
                     splitList[splitList.index(x)] = x.replace("\n","")
@@ -66,6 +87,7 @@ except:
             if x.endswith('"') or x.startswith('"'):
                 splitList[splitList.index(x)] = x.replace('"',"")
 
+        #Fetch sentence endpoints
         modifiedIndexProvider = []
 
         for x in listIndexProvider:
@@ -81,9 +103,8 @@ except:
                 newPhraseWord = splitList[x]
                 splitList[x] = newPhraseWord + "NEW"
 
-
+        #Check word syntax
         faultyWords = []
-
         for x in splitList:
             if x == splitList[0] and x.isupper():
                 d.check(x)
@@ -109,6 +130,7 @@ except:
 
         wordPosition = 0
 
+        #Return output
         for x in faultyWords:
             wordPosition = splitList.index(x)
             print("Word: (" + x + ") In> " + fileItself) 
