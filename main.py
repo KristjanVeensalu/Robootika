@@ -34,7 +34,7 @@ if userChoice == "f" or userChoice == "F":
 #Run automatic spellcheck with suggestions, output into file
 try:
     for enchantFiles in selectedFiles:
-        func.printLine()
+        #func.printLine()
         f=open(enchantFiles, encoding='utf-8')
         textPhase = f.read()
         chkr.set_text(textPhase)

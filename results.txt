@@ -1,44 +1,11 @@
-Word: ('documentum') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txt
-Here are a few suggestions: 
-'document um', 'document-um', 'documented', 'document'
-
-Word: ('doceō') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txt
-Here are a few suggestions: 
-'docent'
-
-Word: ('realia') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txt
-Here are a few suggestions: 
-'regalia', 'realize', 'real'
-
-Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test2.txt
-Here are a few suggestions: 
-'Test phrase', 'Test-phrase', 'Esterase'
-
-Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test2.txt
-Here are a few suggestions: 
-'codeine'
-
-Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test3.txt
-Here are a few suggestions: 
-'Test phrase', 'Test-phrase', 'Esterase'
-
-Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test3.txt
-Here are a few suggestions: 
-'codeine'
-
-Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test4.txt
-Here are a few suggestions: 
-'Test phrase', 'Test-phrase', 'Esterase'
-
-Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test4.txt
-Here are a few suggestions: 
-'codeine'
-
-Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test5.txt
-Here are a few suggestions: 
-'Test phrase', 'Test-phrase', 'Esterase'
-
-Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test5.txt
-Here are a few suggestions: 
-'codeine'
-
+Word: ('documentum') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txtHere are a few suggestions: 'document um', 'document-um', 'documented', 'document'
+Word: ('doceō') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txtHere are a few suggestions: 'docent'
+Word: ('realia') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test1.txtHere are a few suggestions: 'regalia', 'realize', 'real'
+Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test2.txtHere are a few suggestions: 'Test phrase', 'Test-phrase', 'Esterase'
+Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test2.txtHere are a few suggestions: 'codeine'
+Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test3.txtHere are a few suggestions: 'Test phrase', 'Test-phrase', 'Esterase'
+Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test3.txtHere are a few suggestions: 'codeine'
+Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test4.txtHere are a few suggestions: 'Test phrase', 'Test-phrase', 'Esterase'
+Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test4.txtHere are a few suggestions: 'codeine'
+Word: ('Testphrase') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test5.txtHere are a few suggestions: 'Test phrase', 'Test-phrase', 'Esterase'
+Word: ('codeboi') In: C:/Users/GurenZify/Desktop/Robootika/testfiles\test5.txtHere are a few suggestions: 'codeine'
