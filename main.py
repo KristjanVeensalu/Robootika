@@ -42,8 +42,8 @@ try:
         chkr.set_text(textPhase)
         for err in chkr:
             failedWord = d.suggest(err.word)
-            func.writeFile("Word: ('" + err.word + "') In: " + enchantFiles,outputFile)
-            func.writeFile("Here are a few suggestions: ",outputFile)
+            func.writeFile("Word: ('" + err.word + "') In: " + enchantFiles + " - ",outputFile)
+            func.writeFile(" Here are a few suggestions: ",outputFile)
             func.writeFile(str(failedWord).strip('[]')+ "\n",outputFile)
 
 #If automatic fails, switch to manual
