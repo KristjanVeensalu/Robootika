@@ -1,5 +1,7 @@
 import functions as func
 
+#Arduino ühendusel output PATH oleks siis arduino inner ssd drive
+
 #Force install pyenchant
 func.install("pyenchant")
 
